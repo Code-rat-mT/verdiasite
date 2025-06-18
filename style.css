@@ -5,7 +5,6 @@
   --border-green: #2f3b50;
 }
 
-
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -31,6 +30,7 @@ body {
   margin: 0;
   font-size: 1.8rem;
 }
+
 .logo-title {
   display: flex;
   align-items: center;
@@ -38,11 +38,10 @@ body {
 }
 
 .logo-img {
-  height: 48px;        /* adjust as needed */
+  height: 48px;
   width: auto;
-  border-radius: 8px;  /* optional: makes it rounded */
+  border-radius: 8px;
 }
-
 
 .tabs {
   display: flex;
@@ -82,7 +81,6 @@ body {
   display: block;
 }
 
-/* Roadmap sidebar */
 .roadmap-nav {
   background-color: var(--dark-green);
   color: white;
@@ -120,7 +118,6 @@ body {
   font-weight: 700;
 }
 
-/* Content area */
 .content-wrapper {
   display: flex;
   gap: 2rem;
@@ -144,13 +141,11 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Headings */
 h2, h3, h4 {
   color: var(--primary-green);
   margin-top: 0;
 }
 
-/* General text: black */
 p, ul, li {
   color: black;
   font-weight: 300;
@@ -165,7 +160,6 @@ li {
   margin-bottom: 0.5rem;
 }
 
-/* Override text color inside .postcard to white */
 .postcard,
 .postcard p,
 .postcard ul,
@@ -176,8 +170,6 @@ li {
   color: rgba(255, 255, 255, 0.9);
 }
 
-
-/* Override text color inside .roadmap-nav to white */
 .roadmap-nav,
 .roadmap-nav p,
 .roadmap-nav ul,
@@ -185,7 +177,6 @@ li {
   color: white;
 }
 
-/* Team styling */
 .team-member {
   margin-bottom: 2rem;
   color: #333;
@@ -198,7 +189,6 @@ li {
   margin-bottom: 1rem;
 }
 
-/* Contact styling */
 .contact-cards {
   display: flex;
   gap: 1.5rem;
@@ -240,6 +230,7 @@ li {
   border: none;
   font-size: 1rem;
   outline: none;
+  width: 100%;
 }
 
 .contact-form input:focus,
@@ -262,7 +253,6 @@ li {
   background-color: var(--secondary-green);
 }
 
-/* Fade-in animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -279,7 +269,6 @@ li {
   opacity: 0;
 }
 
-/* Scrollbar styling for roadmap */
 .roadmap-nav::-webkit-scrollbar {
   width: 6px;
 }
@@ -301,7 +290,7 @@ li {
 
 .pillar-card {
   background-color: #f2fef3;
-  border-left: 5px solid var(--green);
+  border-left: 5px solid var(--border-green);
   border-radius: 10px;
   padding: 1.25rem 1rem;
   box-shadow: 0 2px 8px rgba(0, 100, 0, 0.05);
@@ -368,8 +357,76 @@ li {
 }
 
 .partner-logo {
-  width: 250px;           /* Increased from 80px */
-  height: 250px;          /* Increased from 80px */
+  width: 100%;
+  max-width: 250px;
+  height: auto;
   object-fit: contain;
   margin-bottom: 1rem;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .logo-title {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .tab-button {
+    width: 90%;
+    margin-left: 0;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .roadmap-nav {
+    width: 100%;
+    position: static;
+    margin-bottom: 1.5rem;
+  }
+
+  .roadmap-content {
+    padding-right: 0;
+  }
+
+  .pillars-grid,
+  .projects-grid,
+  .partners-grid,
+  .contact-cards {
+    grid-template-columns: 1fr !important;
+    padding: 1rem;
+  }
+
+  .partner-logo {
+    width: 100%;
+    height: auto;
+  }
+
+  .project-image {
+    height: 160px;
+  }
+
+  .team-member img.profile-pic {
+    width: 100px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+  }
 }
